@@ -1,0 +1,24 @@
+@import "sassy-partial";
+
+.greeter {
+    @extend %good-perspective;
+
+    span {
+        display: inline-block;
+        animation: rainbow 17s infinite linear, hanging 3s alternate infinite ease-in-out;
+    }
+}
+
+$hang-point: 30%;
+
+$steps: 60;
+@keyframes rainbow {
+  @for $i from 0 through $steps {
+    #{$i/$steps * 100%} { color: hsla($i / $steps * 360deg, 100%, 50%, 0.3)}
+  }
+}
+
+@keyframes hanging {
+    0% { transform:  translateY(-$hang-point) rotateX(30deg) translateY($hang-point); }
+    100% { transform: translateY(-$hang-point) rotateX(-30deg) translateY($hang-point); }
+}
