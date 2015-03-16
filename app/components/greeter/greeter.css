@@ -1,5 +1,6 @@
 .greeter {
     font-size: 100px;
+    text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
     color: rgba(0,0,0,0.1);
     position: absolute;
     top: 50%;
