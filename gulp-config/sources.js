@@ -4,7 +4,6 @@ var _ = require('lodash');
 var sources = {};
 sources.defaultBase = paths.app;
 
-
 // dev serving
 sources.index = 'app/index.html';
 
@@ -21,6 +20,12 @@ sources.css = [
 sources.angularModules = [
     paths.app + 'components/**/*.js',
     paths.app + '*.js'
+];
+
+var angularTemplates = [
+    paths.app + 'components/**/*.html',
+    paths.app + '/*.html',
+    '!' + paths.app + 'index.html'
 ];
 
 var tempFiles = {
@@ -40,16 +45,19 @@ var bowerFiles = {
 };
 
 sources.devAssets = [
-    sources.js, // include only when serving non-processed js files
     bowerFiles,
-    tempFiles
+    tempFiles,
+    angularTemplates
 ];
 
 // build
 sources.rawAssets = [
     bowerFiles,
-    sources.js,
     sources.css
+];
+
+sources.rawBuild = [
+    angularTemplates
 ];
 
 module.exports = sources;
