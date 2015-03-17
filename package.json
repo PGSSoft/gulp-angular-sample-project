@@ -1,7 +1,7 @@
 {
-  "name": "gulp-sample-project",
+  "name": "gulp-angular-sample-project",
   "version": "1.0.0",
-  "description": "Sample project with gulp recipe loader and some recipes.",
+  "description": "A sample project with gulp-recipe-loader using angular framework.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
     "PGS",
     "gulp",
     "gulp-receipe",
-    "generator"
+    "generator",
+    "angular"
   ],
   "author": "PGS Front",
   "license": "ISC",
