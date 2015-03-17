@@ -18,10 +18,12 @@
   "dependencies": {
     "gulp": "^3.8.11",
     "gulp-file": "^0.2.0",
-    "gulp-recipe-autoprefixer": "^0.1.1",
     "gulp-recipe-angular": "^0.1.0",
+    "gulp-recipe-autoprefixer": "^0.1.1",
+    "gulp-recipe-babel": "^0.1.0",
     "gulp-recipe-browsersync-server": "^0.1.2",
     "gulp-recipe-css": "^0.1.4",
+    "gulp-recipe-js": "^0.1.1",
     "gulp-recipe-loader": "^0.1.4",
     "gulp-recipe-pipemin-build": "^0.1.2",
     "gulp-recipe-pipemin-index": "^0.1.2",

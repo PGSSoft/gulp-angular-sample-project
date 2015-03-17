@@ -1,6 +1,13 @@
+'use strict';
+
 angular.module('app', [
-    'app.greeter'
+    'ui.router',
+
+    'app.pages.hello'
 ])
-    .config(function () {
-        
+    .config($stateProvider => {
+        $stateProvider.state('app', {
+            url: '',
+            abstract: true
+        });
     });

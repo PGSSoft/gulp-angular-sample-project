@@ -1,6 +1,6 @@
+'use strict';
+
 angular.module('app')
     .controller('AppCtrl', function () {
-        var vm = this;
-
-        vm.name = "World";
+        var app = this;
     });

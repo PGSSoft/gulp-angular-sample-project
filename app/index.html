@@ -13,9 +13,10 @@
     <!-- build:js scripts.js -->
     <!-- @endif -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="{,/pages/**}/*.js"></script>
     <script src="{,/components/**}/*.js"></script>
     <!-- endbuild -->
-
 
     <!-- @if target='dev' -->
     <!-- build:css -->
@@ -25,14 +26,11 @@
     <!-- build:css styles.css -->
     <!-- @endif -->
     <link rel="stylesheet" href="{,/components/**}/*.css"/>
+    <!-- make page specific styles more important -->
+    <link rel="stylesheet" href="pages/**/*.css"/>
     <!-- endbuild -->
-
 </head>
-<body ng-app="app" ng-controller="AppCtrl as vm">
-
-<input type="text" ng-model="vm.name"/>
-
-<greeter name="vm.name"></greeter>
-
+<body ng-app="app" ng-controller="AppCtrl as app">
+    <div ui-view="main"></div>
 </body>
 </html>

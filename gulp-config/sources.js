@@ -9,32 +9,23 @@ sources.index = 'app/index.html';
 
 sources.sass = [
     paths.app + 'components/**/*.{sass,scss}',
+    paths.app + 'pages/**/*.{sass,scss}',
     paths.app + '*.{sass,scss}'
 ];
 
 sources.css = [
     paths.app + 'components/**/*.css',
+    paths.app + 'pages/**/*.css',
     paths.app + '*.css'
 ];
 
-sources.angularModules = [
+sources.babel = [
     paths.app + 'components/**/*.js',
+    paths.app + 'pages/**/*.js',
     paths.app + '*.js'
 ];
 
-var angularTemplates = [
-    paths.app + 'components/**/*.html',
-    paths.app + '/*.html',
-    '!' + paths.app + 'index.html'
-];
-
-var tempFiles = {
-    files: [
-        paths.tmp + '*.*',
-        paths.tmp + 'components/**/*.*'
-    ],
-    base: paths.tmp
-};
+sources.js = [];
 
 var bowerFiles = {
     files: [
@@ -44,6 +35,18 @@ var bowerFiles = {
     ],
     watch: false
 };
+
+var tempFiles = {
+    files: paths.tmp + '/**',
+    base: paths.tmp
+};
+
+var angularTemplates = [
+    paths.app + 'components/**/*.html',
+    paths.app + 'pages/**/*.html',
+    paths.app + '/*.html',
+    '!' + paths.app + 'index.html'
+];
 
 sources.devAssets = [
     bowerFiles,
