@@ -7,25 +7,28 @@ sources.defaultBase = paths.app;
 // dev serving
 sources.index = 'app/index.html';
 
+// files handled by sass recipe
 sources.sass = [
     paths.app + 'components/**/*.{sass,scss}',
     paths.app + 'pages/**/*.{sass,scss}',
     paths.app + '*.{sass,scss}'
 ];
 
+// files handled by css recipe
 sources.css = [
     paths.app + 'components/**/*.css',
     paths.app + 'pages/**/*.css',
     paths.app + '*.css'
 ];
 
+// files handled by babel recipe
 sources.babel = [
     paths.app + 'components/**/*.js',
     paths.app + 'pages/**/*.js',
     paths.app + '*.js'
 ];
 
-sources.js = [];
+// split files into variables by categories
 
 var bowerFiles = {
     files: [
@@ -33,35 +36,24 @@ var bowerFiles = {
         paths.app + 'bower_components/*/*.js',
         paths.app + 'bower_components/*/{dist,min,release}/*.{js,css}'
     ],
+    // do not watch bower files, as the change is very unlikely and it adds a lot of overhead to the filesystem
     watch: false
 };
 
-var tempFiles = {
-    files: paths.tmp + '/**',
-    base: paths.tmp
-};
-
 var angularTemplates = [
+    // every html file in project is a template for angular, except index
     paths.app + 'components/**/*.html',
     paths.app + 'pages/**/*.html',
-    paths.app + '/*.html',
+    paths.app + '*.html',
     '!' + paths.app + 'index.html'
 ];
 
-sources.devAssets = [
-    bowerFiles,
-    tempFiles,
-    angularTemplates
-];
+// Files not handled by other tasks that need to be passed into pipemin (possibly referenced in index.html).
+// If you don't handle css or js by other tasks, pass them here.
+sources.assets = [bowerFiles];
 
-// build
-sources.rawAssets = [
-    bowerFiles,
-    sources.css
-];
-
-sources.rawBuild = [
-    angularTemplates
-];
+// Files not handled by other tasks that need to be included into build, bypassing pipemin entirely.
+// These files are also watched in development.
+sources.build = [angularTemplates];
 
 module.exports = sources;
