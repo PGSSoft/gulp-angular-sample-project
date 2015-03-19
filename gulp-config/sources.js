@@ -5,7 +5,7 @@ var sources = {};
 sources.defaultBase = paths.app;
 
 // dev serving
-sources.index = 'app/index.html';
+sources.index = paths.app + 'index.html';
 
 // files handled by sass recipe
 sources.sass = [
@@ -29,7 +29,6 @@ sources.babel = [
 ];
 
 // split files into variables by categories
-
 var bowerFiles = {
     files: [
         // most of the generic bower modules
