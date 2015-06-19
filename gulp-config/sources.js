@@ -1,5 +1,4 @@
 var paths = require('./paths');
-var _ = require('lodash');
 
 var sources = {};
 sources.defaultBase = paths.app;

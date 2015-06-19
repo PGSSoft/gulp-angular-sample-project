@@ -1,11 +1,11 @@
 {
   "name": "gulp-angular-sample-project",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A sample project with gulp-recipe-loader using angular framework.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PGS-dev/gulp-sample-project.git"
+    "url": "https://github.com/PGSSoft/gulp-sample-project.git"
   },
   "keywords": [
     "PGS",
