@@ -32,7 +32,7 @@ var bowerFiles = {
     files: [
         // most of the generic bower modules
         paths.app + 'bower_components/*/*.js',
-        paths.app + 'bower_components/*/{dist,min,release}/*.{js,css}'
+        paths.app + 'bower_components/*/{dist,dist/js,dist/css,min,release}/*.{js,css}'
     ],
     // do not watch bower files, as the change is very unlikely and it adds a lot of overhead to the filesystem
     watch: false
